@@ -11,85 +11,90 @@
   <div class="max-w-4xl mx-auto">
     
     <!-- Header -->
-    <header class="text-center mb-10">
-      <h1 class="text-6xl font-black mb-3 gradient-text">
+    <header class="text-center mb-8 sm:mb-10">
+      <h1 class="text-4xl xs:text-5xl sm:text-6xl font-black mb-2 sm:mb-3 gradient-text">
         ✨ TaskMaster
       </h1>
-      <p class="text-slate-400 text-lg">
+      <p class="text-slate-400 text-base sm:text-lg px-4">
         Organiza tu vida, una tarea a la vez
       </p>
     </header>
 
     <!-- Main Container -->
-    <div class="bg-slate-800/50 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-700/50">
+    <div class="bg-slate-800/50 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-slate-700/50">
       
       <!-- Input Section -->
-      <div class="mb-8">
-        <div class="flex gap-3 mb-4">
+      <div class="mb-6 sm:mb-8">
+        <div class="flex flex-col xs:flex-row gap-3 mb-4">
           <input 
             type="text" 
             id="taskInput" 
             placeholder="¿Qué necesitas hacer?"
             autocomplete="off"
-            class="flex-1 px-6 py-4 bg-slate-900/80 text-slate-100 text-lg border-2 border-slate-700 
-                   rounded-2xl placeholder:text-slate-500
+            class="flex-1 px-4 sm:px-6 py-3 sm:py-4 bg-slate-900/80 text-slate-100 text-base sm:text-lg 
+                   border-2 border-slate-700 rounded-xl sm:rounded-2xl placeholder:text-slate-500
                    focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20 
                    transition-all duration-300"
           >
           <button 
             id="addBtn" 
-            class="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold text-lg
-                   rounded-2xl hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/40 
-                   active:translate-y-0 transition-all duration-300 flex items-center gap-2
-                   disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+            class="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-indigo-600 to-purple-600 
+                   text-white font-bold text-base sm:text-lg rounded-xl sm:rounded-2xl 
+                   hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/40 
+                   active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2
+                   disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0
+                   min-w-0 whitespace-nowrap"
           >
-            <span class="text-2xl leading-none">+</span>
-            <span class="hidden sm:inline">Agregar</span>
+            <span class="text-xl sm:text-2xl leading-none">+</span>
+            <span class="xs:inline">Agregar</span>
           </button>
         </div>
         
         <!-- Stats -->
-        <div class="flex gap-3 text-sm">
-          <div class="flex-1 bg-slate-900/50 rounded-xl p-3 text-center border border-slate-700/50">
-            <div class="text-2xl font-bold text-indigo-400" id="totalCount">0</div>
+        <div class="grid grid-cols-3 gap-2 sm:gap-3 text-sm">
+          <div class="bg-slate-900/50 rounded-lg sm:rounded-xl p-2 sm:p-3 text-center border border-slate-700/50">
+            <div class="text-lg sm:text-2xl font-bold text-indigo-400" id="totalCount">0</div>
             <div class="text-slate-400 text-xs">Total</div>
           </div>
-          <div class="flex-1 bg-slate-900/50 rounded-xl p-3 text-center border border-slate-700/50">
-            <div class="text-2xl font-bold text-amber-400" id="pendingCount">0</div>
+          <div class="bg-slate-900/50 rounded-lg sm:rounded-xl p-2 sm:p-3 text-center border border-slate-700/50">
+            <div class="text-lg sm:text-2xl font-bold text-amber-400" id="pendingCount">0</div>
             <div class="text-slate-400 text-xs">Pendientes</div>
           </div>
-          <div class="flex-1 bg-slate-900/50 rounded-xl p-3 text-center border border-slate-700/50">
-            <div class="text-2xl font-bold text-green-400" id="completedCount">0</div>
+          <div class="bg-slate-900/50 rounded-lg sm:rounded-xl p-2 sm:p-3 text-center border border-slate-700/50">
+            <div class="text-lg sm:text-2xl font-bold text-green-400" id="completedCount">0</div>
             <div class="text-slate-400 text-xs">Completadas</div>
           </div>
         </div>
       </div>
 
       <!-- Filters -->
-      <div class="flex gap-2 mb-6 overflow-x-auto pb-2">
+      <div class="flex flex-col xs:flex-row gap-2 sm:gap-3 mb-6">
         <button 
-          class="filter-btn px-6 py-3 bg-indigo-600 text-white border-2 border-indigo-600 
-                 rounded-xl font-semibold whitespace-nowrap transition-all duration-300
-                 hover:bg-indigo-700 shadow-lg shadow-indigo-600/30" 
+          class="filter-btn flex-1 px-4 sm:px-6 py-3 bg-indigo-600 text-white border-2 border-indigo-600 
+                 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base
+                 hover:bg-indigo-700 shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2" 
           data-filter="all"
         >
-          📋 Todas
+          <span class="text-base">📋</span>
+          <span>Todas</span>
         </button>
         <button 
-          class="filter-btn px-6 py-3 bg-slate-700/50 text-slate-300 border-2 border-slate-600 
-                 rounded-xl font-semibold whitespace-nowrap transition-all duration-300
-                 hover:bg-slate-600 hover:text-white" 
+          class="filter-btn flex-1 px-4 sm:px-6 py-3 bg-slate-700/50 text-slate-300 border-2 border-slate-600 
+                 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base
+                 hover:bg-slate-600 hover:text-white flex items-center justify-center gap-2" 
           data-filter="pending"
         >
-          ⏳ Pendientes
+          <span class="text-base">⏳</span>
+          <span>Pendientes</span>
         </button>
         <button 
-          class="filter-btn px-6 py-3 bg-slate-700/50 text-slate-300 border-2 border-slate-600 
-                 rounded-xl font-semibold whitespace-nowrap transition-all duration-300
-                 hover:bg-slate-600 hover:text-white" 
+          class="filter-btn flex-1 px-4 sm:px-6 py-3 bg-slate-700/50 text-slate-300 border-2 border-slate-600 
+                 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base
+                 hover:bg-slate-600 hover:text-white flex items-center justify-center gap-2" 
           data-filter="completed"
         >
-          ✅ Completadas
+          <span class="text-base">✅</span>
+          <span>Completadas</span>
         </button>
       </div>
 
@@ -100,37 +105,41 @@
         <!-- Empty State -->
         <div 
           id="emptyState" 
-          class="hidden text-center py-20 px-5"
+          class="hidden text-center py-12 sm:py-20 px-4 sm:px-5"
         >
-          <div class="text-7xl mb-6 animate-bounce">🎯</div>
-          <h3 class="text-2xl font-bold text-slate-300 mb-2">¡Empieza tu día productivo!</h3>
-          <p class="text-slate-400">Agrega tu primera tarea para comenzar</p>
+          <div class="text-5xl sm:text-7xl mb-4 sm:mb-6 animate-bounce">🎯</div>
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-300 mb-2">¡Empieza tu día productivo!</h3>
+          <p class="text-slate-400 text-sm sm:text-base">Agrega tu primera tarea para comenzar</p>
         </div>
       </div>
 
       <!-- Actions -->
-      <div class="flex gap-3">
+      <div class="flex flex-col xs:flex-row gap-3">
         <button 
           id="clearCompleted" 
-          class="hidden flex-1 px-5 py-3 bg-slate-700/50 text-slate-300 border-2 border-slate-600 
-                 rounded-xl font-semibold transition-all duration-300
-                 hover:bg-red-600 hover:text-white hover:border-red-600 hover:shadow-lg hover:shadow-red-600/30"
+          class="hidden flex-1 px-4 sm:px-5 py-3 bg-slate-700/50 text-slate-300 border-2 border-slate-600 
+                 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base
+                 hover:bg-red-600 hover:text-white hover:border-red-600 hover:shadow-lg hover:shadow-red-600/30
+                 flex items-center justify-center gap-2"
         >
-          🗑️ Limpiar completadas
+          <span>🗑️</span>
+          <span>Limpiar completadas</span>
         </button>
         <button 
           id="deleteAll" 
-          class="hidden flex-1 px-5 py-3 bg-slate-700/50 text-slate-300 border-2 border-slate-600 
-                 rounded-xl font-semibold transition-all duration-300
-                 hover:bg-rose-600 hover:text-white hover:border-rose-600 hover:shadow-lg hover:shadow-rose-600/30"
+          class="hidden flex-1 px-4 sm:px-5 py-3 bg-slate-700/50 text-slate-300 border-2 border-slate-600 
+                 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base
+                 hover:bg-rose-600 hover:text-white hover:border-rose-600 hover:shadow-lg hover:shadow-rose-600/30
+                 flex items-center justify-center gap-2"
         >
-          💥 Eliminar todas
+          <span>💥</span>
+          <span>Eliminar todas</span>
         </button>
       </div>
     </div>
 
     <!-- Footer -->
-    <footer class="text-center mt-8 text-slate-500 text-sm">
+    <footer class="text-center mt-6 sm:mt-8 text-slate-500 text-xs sm:text-sm px-4">
       Hecho con 💜 usando Vite + Tailwind CSS
     </footer>
   </div>
