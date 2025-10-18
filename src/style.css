@@ -144,20 +144,3 @@
     font-size: 16px; /* Evita zoom en iOS */
   }
 }
-
-/* Debug: Forzar visibilidad de elementos */
-#taskList {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-#taskList li {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  min-height: 50px;
-  background: #1e293b !important;
-  margin-bottom: 8px;
-  padding: 12px !important;
-}
